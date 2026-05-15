@@ -3,189 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChaCha Pressing – Nettoyage & Pressing Professionnel</title>
+<title>Ch@Ch@ Pressing – Nettoyage Professionnel / Professional Cleaning</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --red: #C8201A; --red-dark: #8B1510; --red-light: #F5E8E7;
-    --navy: #0D1B3E; --navy-mid: #1A2F5E; --gold: #D4A832;
-    --white: #FFFFFF; --off-white: #F9F6F2; --gray: #6B6B6B; --light-gray: #E8E5E0;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --red: #C8201A; --red-dark: #8B1510; --red-light: #F5E8E7;
+  --navy: #0D1B3E; --navy-mid: #1A2F5E; --gold: #D4A832;
+  --white: #FFFFFF; --off-white: #F9F6F2; --gray: #6B6B6B; --light-gray: #E8E5E0;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
 
-  .lang-toggle { display: flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 3px; }
-  .lang-btn { padding: 4px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; cursor: pointer; border: none; background: transparent; color: rgba(255,255,255,0.6); transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
-  .lang-btn.active { background: var(--red); color: var(--white); }
-  .lang-btn:hover:not(.active) { color: var(--white); }
+/* LANG TOGGLE */
+.lang-toggle { display: flex; align-items: center; gap: 3px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 3px; }
+.lang-btn { padding: 4px 14px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; letter-spacing: 1px; cursor: pointer; border: none; background: transparent; color: rgba(255,255,255,0.6); transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
+.lang-btn.active { background: var(--red); color: var(--white); }
+.lang-btn:hover:not(.active) { color: var(--white); }
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; background: rgba(13,27,62,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(212,168,50,0.3); }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-logo-circle { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--red); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; color: var(--red); font-size: 14px; letter-spacing: 1px; }
-  .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); font-weight: 700; }
-  .nav-logo-text span { color: var(--red); }
-  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
-  nav ul { list-style: none; display: flex; gap: 2rem; }
-  nav ul a { text-decoration: none; color: rgba(255,255,255,0.8); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
-  nav ul a:hover { color: var(--gold); }
-  .nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 4px; }
-  .nav-cta:hover { background: var(--red-dark) !important; }
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 4rem;
+  background: rgba(13,27,62,0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212,168,50,0.25);
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 50px; width: auto; object-fit: contain; }
+.nav-logo-fallback { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--red); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-weight: 900; color: var(--red); font-size: 12px; }
+.nav-logo-text { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--white); font-weight: 700; display: none; }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav ul a { text-decoration: none; color: rgba(255,255,255,0.8); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+nav ul a:hover { color: var(--gold); }
+.nav-cta { background: var(--red) !important; color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 4px; }
+.nav-cta:hover { background: var(--red-dark) !important; }
 
-  .hero { min-height: 100vh; background: var(--navy); display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
-  .hero-pattern { position: absolute; inset: 0; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 1px, transparent 0, transparent 50%); background-size: 20px 20px; }
-  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 4rem 4rem; position: relative; z-index: 2; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(200,32,26,0.15); border: 1px solid rgba(200,32,26,0.4); color: #F08080; padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.78rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2rem; width: fit-content; }
-  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; color: var(--white); line-height: 1.08; margin-bottom: 1.5rem; }
-  .hero-title .accent { color: var(--red); }
-  .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.8; max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; }
-  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: var(--white); padding: 0.9rem 2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; transition: background 0.2s, transform 0.15s; }
-  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
-  .btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--white); padding: 0.9rem 2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); transition: border-color 0.2s, color 0.2s; }
-  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-  .hero-stats { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
-  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--white); display: block; }
-  .stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; }
-  .hero-right { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .hero-right::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(200,32,26,0.15) 0%, transparent 70%); border-radius: 50%; }
-  .hero-graphic { position: relative; z-index: 2; text-align: center; }
-  .hero-logo-big { font-family: 'Playfair Display', serif; font-size: 9rem; font-weight: 900; color: rgba(255,255,255,0.04); letter-spacing: -4px; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; user-select: none; }
-  .hero-circle { width: 300px; height: 300px; border-radius: 50%; border: 2px solid rgba(200,32,26,0.4); display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(200,32,26,0.06); position: relative; }
-  .hero-circle::before { content: ''; position: absolute; inset: 12px; border-radius: 50%; border: 1px solid rgba(200,32,26,0.2); }
-  .hero-circle-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--white); font-weight: 700; letter-spacing: 2px; }
-  .hero-circle-sub { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 3px; margin-top: 4px; }
-  .hero-badges-ring { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 400px; height: 400px; }
-  .ring-badge { position: absolute; background: var(--navy-mid); border: 1px solid rgba(200,32,26,0.3); border-radius: 8px; padding: 0.5rem 0.8rem; font-size: 0.7rem; color: rgba(255,255,255,0.8); white-space: nowrap; font-weight: 500; }
-  .ring-badge:nth-child(1) { top: 0; left: 50%; transform: translateX(-50%); }
-  .ring-badge:nth-child(2) { top: 50%; right: 0; transform: translateY(-50%); }
-  .ring-badge:nth-child(3) { bottom: 0; left: 50%; transform: translateX(-50%); }
-  .ring-badge:nth-child(4) { top: 50%; left: 0; transform: translateY(-50%); }
+/* HERO */
+.hero { min-height: 100vh; background: var(--navy); display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1600&q=80');
+  background-size: cover; background-position: center;
+  opacity: 0.08;
+}
+.hero-pattern { position: absolute; inset: 0; z-index: 1; background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0, rgba(255,255,255,0.015) 1px, transparent 0, transparent 50%); background-size: 22px 22px; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 4rem 4rem; position: relative; z-index: 2; }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(200,32,26,0.18); border: 1px solid rgba(200,32,26,0.45); color: #F08080; padding: 0.4rem 1rem; border-radius: 100px; font-size: 0.75rem; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2rem; width: fit-content; }
+.hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--red); border-radius: 50%; flex-shrink: 0; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.2rem); font-weight: 900; color: var(--white); line-height: 1.08; margin-bottom: 1.5rem; }
+.hero-title .accent { color: var(--red); }
+.hero-sub { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.85; max-width: 480px; margin-bottom: 2.5rem; font-weight: 300; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: var(--white); padding: 0.9rem 2rem; border-radius: 6px; font-size: 0.88rem; font-weight: 600; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--white); padding: 0.9rem 2rem; border-radius: 6px; font-size: 0.88rem; font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.25); transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.hero-stats { display: flex; gap: 2.5rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--white); display: block; }
+.stat-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; }
 
-  .marquee-wrap { background: var(--red); padding: 0.75rem 0; overflow: hidden; }
-  .marquee-track { display: flex; animation: marquee 22s linear infinite; width: max-content; }
-  .marquee-item { display: flex; align-items: center; gap: 2rem; padding: 0 2rem; font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
-  .marquee-dot { width: 4px; height: 4px; background: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* HERO RIGHT - PHOTO COLLAGE */
+.hero-right { position: relative; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 6px; padding: 5rem 2rem 2rem 1rem; z-index: 2; }
+.hero-photo { overflow: hidden; border-radius: 8px; position: relative; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.hero-photo:hover img { transform: scale(1.05); }
+.hero-photo:nth-child(1) { grid-row: 1 / 3; border-radius: 12px; }
+.hero-photo:nth-child(2) { border-radius: 12px 12px 4px 4px; }
+.hero-photo:nth-child(3) { border-radius: 4px 4px 12px 12px; }
+.hero-logo-overlay {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  background: rgba(13,27,62,0.85); border-radius: 50%; padding: 10px;
+  border: 2px solid rgba(200,32,26,0.5); z-index: 3;
+  backdrop-filter: blur(6px);
+}
+.hero-logo-overlay img { width: 90px; height: 90px; object-fit: contain; border-radius: 50%; }
 
-  section { padding: 6rem 4rem; }
-  .section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 0.75rem; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 900; color: var(--navy); line-height: 1.15; }
-  .section-title.light { color: var(--white); }
-  .divider { width: 48px; height: 3px; background: var(--red); margin: 1.5rem 0; }
+/* MARQUEE */
+.marquee-wrap { background: var(--red); padding: 0.75rem 0; overflow: hidden; }
+.marquee-track { display: flex; animation: marquee 22s linear infinite; width: max-content; }
+.marquee-item { display: flex; align-items: center; gap: 2rem; padding: 0 2rem; font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.92); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+.marquee-dot { width: 4px; height: 4px; background: rgba(255,255,255,0.5); border-radius: 50%; display: inline-block; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  #services { background: var(--off-white); }
-  .services-header { max-width: 600px; margin-bottom: 4rem; }
-  .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-  .service-card { background: var(--white); border: 1px solid var(--light-gray); border-radius: 12px; padding: 2rem; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
-  .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--red); transform: scaleX(0); transition: transform 0.25s; transform-origin: left; }
-  .service-card:hover { border-color: rgba(200,32,26,0.2); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(200,32,26,0.08); }
-  .service-card:hover::after { transform: scaleX(1); }
-  .service-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
-  .service-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
-  .service-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.7; }
+/* SECTIONS */
+section { padding: 6rem 4rem; }
+.section-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 0.75rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 900; color: var(--navy); line-height: 1.15; }
+.section-title.light { color: var(--white); }
+.divider { width: 48px; height: 3px; background: var(--red); margin: 1.5rem 0; }
 
-  #pourquoi { background: var(--navy); position: relative; overflow: hidden; }
-  #pourquoi::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(200,32,26,0.12) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-  .why-points { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
-  .why-point { display: flex; gap: 1rem; align-items: flex-start; }
-  .why-point-num { width: 36px; height: 36px; border-radius: 50%; background: rgba(200,32,26,0.2); border: 1px solid rgba(200,32,26,0.4); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; color: #F08080; flex-shrink: 0; }
-  .why-point-text h4 { color: var(--white); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
-  .why-point-text p { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.7; }
-  .why-right { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .quality-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1.8rem; text-align: center; transition: background 0.2s; }
-  .quality-card:hover { background: rgba(200,32,26,0.1); }
-  .quality-card:nth-child(2), .quality-card:nth-child(4) { margin-top: 1.5rem; }
-  .quality-num { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: var(--red); display: block; line-height: 1; }
-  .quality-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.5rem; }
+/* SERVICES with photo cards */
+#services { background: var(--off-white); }
+.services-header { max-width: 600px; margin-bottom: 4rem; }
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.service-card { background: var(--white); border: 1px solid var(--light-gray); border-radius: 14px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(200,32,26,0.1); }
+.service-photo { height: 180px; overflow: hidden; position: relative; }
+.service-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+.service-card:hover .service-photo img { transform: scale(1.06); }
+.service-photo-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(13,27,62,0.6)); }
+.service-body { padding: 1.5rem; }
+.service-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+.service-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
 
-  #tarifs { background: var(--white); }
-  .tarifs-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem; }
-  .tarifs-list { margin-top: 1rem; }
-  .tarif-row { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 0; border-bottom: 1px solid var(--light-gray); font-size: 0.9rem; }
-  .tarif-row:last-child { border-bottom: none; }
-  .tarif-name { color: var(--navy); font-weight: 500; }
-  .tarif-price { color: var(--red); font-weight: 700; font-family: 'Playfair Display', serif; }
-  .tarif-note { font-size: 0.8rem; color: var(--gray); margin-top: 1rem; font-style: italic; }
-  .tarifs-highlight { background: var(--navy); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
-  .tarifs-highlight::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: rgba(200,32,26,0.15); border-radius: 50%; }
-  .highlight-badge { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.3rem 1rem; border-radius: 100px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
-  .highlight-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); font-weight: 700; margin-bottom: 0.5rem; }
-  .highlight-desc { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.5rem; }
-  .highlight-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-  .highlight-features li { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.8); font-size: 0.88rem; }
-  .check { width: 20px; height: 20px; border-radius: 50%; background: rgba(200,32,26,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #F08080; flex-shrink: 0; }
+/* GALLERY STRIP */
+#gallery { background: var(--navy); padding: 0; overflow: hidden; }
+.gallery-strip { display: flex; }
+.gallery-strip-item { flex: 1; height: 320px; overflow: hidden; position: relative; }
+.gallery-strip-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; filter: brightness(0.75); }
+.gallery-strip-item:hover img { transform: scale(1.08); filter: brightness(0.9); }
+.gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem 1.2rem; background: linear-gradient(to top, rgba(13,27,62,0.9) 0%, transparent 100%); }
+.gallery-caption span { color: var(--white); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-  #contact { background: var(--off-white); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; }
-  .contact-info { display: flex; flex-direction: column; gap: 2rem; }
-  .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
-  .contact-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--red-light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
-  .contact-item h4 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray); margin-bottom: 0.25rem; }
-  .contact-item p, .contact-item a { color: var(--navy); font-weight: 600; font-size: 1rem; text-decoration: none; }
-  .contact-item a:hover { color: var(--red); }
-  .contact-form { background: var(--white); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--light-gray); }
-  .form-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
-  .form-sub { font-size: 0.85rem; color: var(--gray); margin-bottom: 2rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
-  .form-group label { font-size: 0.75rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
-  .form-group input, .form-group select, .form-group textarea { padding: 0.75rem 1rem; border: 1px solid var(--light-gray); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--navy); background: var(--white); transition: border-color 0.2s; outline: none; }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red); }
-  .form-group textarea { resize: vertical; min-height: 100px; }
-  .btn-submit { width: 100%; padding: 1rem; background: var(--red); color: var(--white); border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
-  .btn-submit:hover { background: var(--red-dark); }
+/* WHY US */
+#pourquoi { background: var(--navy); position: relative; overflow: hidden; }
+#pourquoi::before { content: ''; position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(200,32,26,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.why-points { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.why-point { display: flex; gap: 1rem; align-items: flex-start; }
+.why-point-num { width: 36px; height: 36px; border-radius: 50%; background: rgba(200,32,26,0.2); border: 1px solid rgba(200,32,26,0.4); display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: #F08080; flex-shrink: 0; }
+.why-point-text h4 { color: var(--white); font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
+.why-point-text p { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.7; }
+.why-photo-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 10px; }
+.why-photo { border-radius: 10px; overflow: hidden; }
+.why-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+.why-photo:hover img { transform: scale(1.04); }
+.why-photo:nth-child(1) { height: 220px; }
+.why-photo:nth-child(2) { height: 220px; margin-top: 30px; }
+.why-photo:nth-child(3) { height: 180px; }
+.why-photo:nth-child(4) { height: 180px; margin-top: -30px; }
 
-  footer { background: var(--navy); padding: 4rem; border-top: 1px solid rgba(255,255,255,0.06); }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
-  .footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.85rem; line-height: 1.8; margin-top: 1rem; max-width: 320px; }
-  .footer-col h4 { color: var(--white); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-  .footer-col ul a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-  .footer-col ul a:hover { color: var(--gold); }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; }
-  .footer-bottom p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
-  .stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; }
+/* STATS BAR */
+.stats-bar { background: var(--red); padding: 3rem 4rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+.stat-item { text-align: center; }
+.stat-big { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--white); display: block; line-height: 1; }
+.stat-desc { font-size: 0.8rem; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 1px; margin-top: 0.4rem; display: block; }
 
-  .whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; background: #25D366; color: white; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37,211,102,0.4); transition: transform 0.2s; }
-  .whatsapp-float:hover { transform: scale(1.1); }
+/* PRICING */
+#tarifs { background: var(--white); }
+.tarifs-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem; }
+.tarifs-list { margin-top: 1rem; }
+.tarif-row { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 0; border-bottom: 1px solid var(--light-gray); font-size: 0.9rem; }
+.tarif-row:last-child { border-bottom: none; }
+.tarif-name { color: var(--navy); font-weight: 500; }
+.tarif-price { color: var(--red); font-weight: 700; font-family: 'Playfair Display', serif; }
+.tarif-note { font-size: 0.8rem; color: var(--gray); margin-top: 1rem; font-style: italic; }
+.tarifs-highlight { background: var(--navy); border-radius: 16px; padding: 2.5rem; position: relative; overflow: hidden; }
+.tarifs-highlight::before { content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; background: rgba(200,32,26,0.15); border-radius: 50%; }
+.highlight-badge { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.3rem 1rem; border-radius: 100px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+.highlight-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--white); font-weight: 700; margin-bottom: 0.5rem; }
+.highlight-desc { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.5rem; }
+.highlight-features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.highlight-features li { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.8); font-size: 0.88rem; }
+.check { width: 20px; height: 20px; border-radius: 50%; background: rgba(200,32,26,0.25); display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: #F08080; flex-shrink: 0; }
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-  .fade-up { animation: fadeUp 0.7s ease forwards; }
-  .delay-1 { animation-delay: 0.1s; opacity: 0; }
-  .delay-2 { animation-delay: 0.25s; opacity: 0; }
-  .delay-3 { animation-delay: 0.4s; opacity: 0; }
-  .delay-4 { animation-delay: 0.55s; opacity: 0; }
+/* CONTACT */
+#contact { background: var(--off-white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; }
+.contact-info { display: flex; flex-direction: column; gap: 1.8rem; }
+.contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--red-light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.contact-item h4 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray); margin-bottom: 0.25rem; }
+.contact-item p, .contact-item a { color: var(--navy); font-weight: 600; font-size: 1rem; text-decoration: none; }
+.contact-item a:hover { color: var(--red); }
+.contact-map { margin-top: 2rem; border-radius: 12px; overflow: hidden; border: 1px solid var(--light-gray); height: 200px; background: var(--light-gray); display: flex; align-items: center; justify-content: center; }
+.contact-form { background: var(--white); border-radius: 16px; padding: 2.5rem; border: 1px solid var(--light-gray); }
+.form-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+.form-sub { font-size: 0.85rem; color: var(--gray); margin-bottom: 2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1rem; display: flex; flex-direction: column; }
+.form-group label { font-size: 0.72rem; font-weight: 600; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.4rem; }
+.form-group input, .form-group select, .form-group textarea { padding: 0.75rem 1rem; border: 1px solid var(--light-gray); border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--navy); background: var(--white); transition: border-color 0.2s; outline: none; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red); }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.btn-submit { width: 100%; padding: 1rem; background: var(--red); color: var(--white); border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; }
+.btn-submit:hover { background: var(--red-dark); }
 
-  @media (max-width: 1024px) {
-    nav { padding: 1rem 1.5rem; }
-    nav ul { gap: 1rem; }
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .services-grid { grid-template-columns: 1fr 1fr; }
-    .why-grid, .tarifs-intro, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-    footer { padding: 3rem 1.5rem; }
-  }
-  @media (max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-    nav ul { display: none; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .form-row { grid-template-columns: 1fr; }
-  }
+/* FOOTER */
+footer { background: var(--navy); padding: 4rem; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4rem; margin-bottom: 3rem; }
+.footer-logo img { height: 70px; width: auto; object-fit: contain; margin-bottom: 1rem; }
+.footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.85rem; line-height: 1.8; max-width: 320px; }
+.footer-col h4 { color: var(--white); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1.2rem; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-col ul a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; }
+.footer-bottom p { color: rgba(255,255,255,0.3); font-size: 0.8rem; }
+.stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 2px; }
+
+.whatsapp-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; background: #25D366; color: white; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.45); transition: transform 0.2s; }
+.whatsapp-float:hover { transform: scale(1.12); }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { animation: fadeUp 0.75s ease forwards; }
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.25s; opacity: 0; }
+.delay-3 { animation-delay: 0.4s; opacity: 0; }
+.delay-4 { animation-delay: 0.55s; opacity: 0; }
+
+@media (max-width: 1100px) {
+  nav { padding: 0.75rem 2rem; }
+  nav ul { gap: 1.2rem; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-logo-overlay { display: none; }
+  section { padding: 4rem 2rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid, .tarifs-intro, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .why-photo-grid { grid-template-columns: repeat(4,1fr); }
+  .why-photo:nth-child(2), .why-photo:nth-child(4) { margin-top: 0; }
+  .stats-bar { grid-template-columns: repeat(2,1fr); padding: 2rem; }
+  .gallery-strip { flex-wrap: wrap; }
+  .gallery-strip-item { flex: 1 1 50%; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  footer { padding: 3rem 2rem; }
+}
+@media (max-width: 640px) {
+  nav ul { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: repeat(2,1fr); }
+  .why-photo-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .hero-left { padding: 7rem 1.5rem 3rem; }
+}
 </style>
 </head>
 <body>
 
 <a href="https://wa.me/237673835386" class="whatsapp-float" target="_blank" aria-label="WhatsApp">💬</a>
 
+<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <div class="nav-logo-circle">Ch@</div>
-    <span class="nav-logo-text">Ch@Ch@ <span>Pressing</span></span>
+    <img src="logo.png" alt="Ch@Ch@ Pressing Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="nav-logo-fallback" style="display:none;">Ch@</div>
   </a>
   <ul>
     <li><a href="#services" data-i18n="nav_services">Services</a></li>
@@ -201,8 +257,11 @@
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
+
   <div class="hero-left">
     <div class="hero-badge fade-up" data-i18n="hero_location">📍 PK 8 Valley St Thomas, Cameroun</div>
     <h1 class="hero-title fade-up delay-1" data-i18n="hero_title">Le pressing<br><span class="accent">professionnel</span><br>qu'il vous faut.</h1>
@@ -217,24 +276,26 @@
       <div><span class="stat-num">100%</span><span class="stat-label" data-i18n="stat3">Satisfaction garantie</span></div>
     </div>
   </div>
+
+  <!-- Hero right photo collage -->
   <div class="hero-right">
-    <div class="hero-logo-big">CH</div>
-    <div class="hero-badges-ring">
-      <div class="ring-badge" data-i18n="rb1">✦ Qualité Premium</div>
-      <div class="ring-badge" data-i18n="rb2">⚡ Express</div>
-      <div class="ring-badge" data-i18n="rb3">🚚 Livraison à domicile</div>
-      <div class="ring-badge" data-i18n="rb4">👕 Tous vêtements</div>
+    <div class="hero-photo" style="grid-row: 1/3;">
+      <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=600&q=80" alt="Pressing professionnel" loading="lazy">
     </div>
-    <div class="hero-graphic">
-      <div class="hero-circle">
-        <div style="font-size:4rem;margin-bottom:0.8rem;">🔴</div>
-        <div class="hero-circle-text">CH@CH@</div>
-        <div class="hero-circle-sub" data-i18n="circle_sub">Pressing · Nettoyage</div>
-      </div>
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="Machine à laver industrielle" loading="lazy">
+    </div>
+    <div class="hero-photo">
+      <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400&q=80" alt="Repassage professionnel" loading="lazy">
+    </div>
+    <!-- Logo overlay in centre -->
+    <div class="hero-logo-overlay">
+      <img src="logo.png" alt="Ch@Ch@ Logo" onerror="this.parentElement.style.display='none'">
     </div>
   </div>
 </section>
 
+<!-- MARQUEE -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
     <div class="marquee-item"><span data-i18n="mq1">Propreté</span><span class="marquee-dot"></span></div>
@@ -254,6 +315,7 @@
   </div>
 </div>
 
+<!-- SERVICES -->
 <section id="services">
   <div class="services-header">
     <p class="section-label" data-i18n="svc_label">Nos prestations</p>
@@ -263,60 +325,122 @@
   </div>
   <div class="services-grid">
     <div class="service-card">
-      <div class="service-icon">👕</div>
-      <h3 class="service-name" data-i18n="s1_name">Lavage tous vêtements</h3>
-      <p class="service-desc" data-i18n="s1_desc">Prise en charge de tous types de vêtements — chemises, pantalons, robes, tenues traditionnelles — avec le soin approprié à chaque tissu.</p>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=600&q=80" alt="Lavage vêtements" loading="lazy">
+        <div class="service-photo-overlay"></div>
+      </div>
+      <div class="service-body">
+        <h3 class="service-name" data-i18n="s1_name">Lavage tous vêtements</h3>
+        <p class="service-desc" data-i18n="s1_desc">Prise en charge de tous types de vêtements avec le soin approprié à chaque tissu.</p>
+      </div>
     </div>
     <div class="service-card">
-      <div class="service-icon">🌬️</div>
-      <h3 class="service-name" data-i18n="s2_name">Lavage à sec</h3>
-      <p class="service-desc" data-i18n="s2_desc">Nettoyage sans eau pour les tissus délicats et les pièces qui nécessitent un traitement spécial. Résultats impeccables garantis.</p>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?w=600&q=80" alt="Lavage à sec" loading="lazy">
+        <div class="service-photo-overlay"></div>
+      </div>
+      <div class="service-body">
+        <h3 class="service-name" data-i18n="s2_name">Lavage à sec</h3>
+        <p class="service-desc" data-i18n="s2_desc">Nettoyage sans eau pour les tissus délicats. Résultats impeccables garantis.</p>
+      </div>
     </div>
     <div class="service-card">
-      <div class="service-icon">⚖️</div>
-      <h3 class="service-name" data-i18n="s3_name">Lavage en kilo</h3>
-      <p class="service-desc" data-i18n="s3_desc">Tarification au kilogramme pour les grandes quantités de linge. Idéal pour les familles, hôtels et entreprises.</p>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80" alt="Machine à laver" loading="lazy">
+        <div class="service-photo-overlay"></div>
+      </div>
+      <div class="service-body">
+        <h3 class="service-name" data-i18n="s3_name">Lavage en kilo</h3>
+        <p class="service-desc" data-i18n="s3_desc">Tarification au kilogramme pour les grandes quantités. Idéal pour familles et hôtels.</p>
+      </div>
     </div>
     <div class="service-card">
-      <div class="service-icon">⚡</div>
-      <h3 class="service-name" data-i18n="s4_name">Lavage express</h3>
-      <p class="service-desc" data-i18n="s4_desc">Besoin urgent ? Notre service express traite votre linge en priorité absolue. Votre garde-robe prête en un temps record.</p>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=600&q=80" alt="Lavage express" loading="lazy">
+        <div class="service-photo-overlay"></div>
+      </div>
+      <div class="service-body">
+        <h3 class="service-name" data-i18n="s4_name">Lavage express</h3>
+        <p class="service-desc" data-i18n="s4_desc">Service prioritaire pour les urgences. Votre linge prêt en un temps record.</p>
+      </div>
     </div>
     <div class="service-card">
-      <div class="service-icon">✨</div>
-      <h3 class="service-name" data-i18n="s5_name">Repassage industriel</h3>
-      <p class="service-desc" data-i18n="s5_desc">Repassage professionnel pour un résultat parfait. Nos équipements industriels éliminent le moindre faux-pli sur tous types de textiles.</p>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=600&q=80" alt="Repassage industriel" loading="lazy">
+        <div class="service-photo-overlay"></div>
+      </div>
+      <div class="service-body">
+        <h3 class="service-name" data-i18n="s5_name">Repassage industriel</h3>
+        <p class="service-desc" data-i18n="s5_desc">Équipements industriels pour un résultat parfait — zéro faux-pli sur tous textiles.</p>
+      </div>
     </div>
     <div class="service-card">
-      <div class="service-icon">🚚</div>
-      <h3 class="service-name" data-i18n="s6_name">Ramassage & Livraison</h3>
-      <p class="service-desc" data-i18n="s6_desc">Nous venons chercher votre linge chez vous et le rapportons propre et plié. Un confort absolu sans se déplacer.</p>
+      <div class="service-photo">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Livraison à domicile" loading="lazy">
+        <div class="service-photo-overlay"></div>
+      </div>
+      <div class="service-body">
+        <h3 class="service-name" data-i18n="s6_name">Ramassage & Livraison</h3>
+        <p class="service-desc" data-i18n="s6_desc">Nous venons chercher et rapportons votre linge propre. Confort absolu à domicile.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- PHOTO GALLERY STRIP -->
+<div id="gallery">
+  <div class="gallery-strip">
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=500&q=80" alt="Machine industrielle" loading="lazy">
+      <div class="gallery-caption"><span data-i18n="gal1">Machines industrielles</span></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?w=500&q=80" alt="Repassage" loading="lazy">
+      <div class="gallery-caption"><span data-i18n="gal2">Repassage expert</span></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=80" alt="Linge propre" loading="lazy">
+      <div class="gallery-caption"><span data-i18n="gal3">Résultats impeccables</span></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80" alt="Pressing professionnel" loading="lazy">
+      <div class="gallery-caption"><span data-i18n="gal4">Service professionnel</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
 <section id="pourquoi">
   <div class="why-grid">
     <div class="why-left">
-      <p class="section-label" style="color:rgba(200,32,26,0.8);" data-i18n="why_label">Pourquoi nous choisir</p>
+      <p class="section-label" style="color:rgba(240,128,128,0.9);" data-i18n="why_label">Pourquoi nous choisir</p>
       <h2 class="section-title light" data-i18n="why_title">Un pressing qui mérite votre confiance</h2>
       <div class="divider"></div>
       <div class="why-points">
         <div class="why-point"><div class="why-point-num">01</div><div class="why-point-text"><h4 data-i18n="w1_h">Qualité Premium</h4><p data-i18n="w1_p">Équipements de dernière génération, produits professionnels et personnel formé pour des résultats irréprochables.</p></div></div>
-        <div class="why-point"><div class="why-point-num">02</div><div class="why-point-text"><h4 data-i18n="w2_h">Disponibilité 24h/24</h4><p data-i18n="w2_p">Parce que vos besoins ne s'arrêtent pas. Notre service rapide est disponible à toute heure pour répondre à vos urgences.</p></div></div>
-        <div class="why-point"><div class="why-point-num">03</div><div class="why-point-text"><h4 data-i18n="w3_h">Soin & Respect de vos vêtements</h4><p data-i18n="w3_p">Chaque pièce est traitée individuellement selon sa nature. Nous respectons vos vêtements comme s'ils étaient les nôtres.</p></div></div>
-        <div class="why-point"><div class="why-point-num">04</div><div class="why-point-text"><h4 data-i18n="w4_h">Service à domicile</h4><p data-i18n="w4_p">Ramassage et livraison directement chez vous — PK 8 et environs — pour votre confort total.</p></div></div>
+        <div class="why-point"><div class="why-point-num">02</div><div class="why-point-text"><h4 data-i18n="w2_h">Disponibilité 24h/24</h4><p data-i18n="w2_p">Notre service rapide est disponible à toute heure pour répondre à vos urgences.</p></div></div>
+        <div class="why-point"><div class="why-point-num">03</div><div class="why-point-text"><h4 data-i18n="w3_h">Soin & Respect de vos vêtements</h4><p data-i18n="w3_p">Chaque pièce traitée individuellement. Nous respectons vos vêtements comme les nôtres.</p></div></div>
+        <div class="why-point"><div class="why-point-num">04</div><div class="why-point-text"><h4 data-i18n="w4_h">Service à domicile</h4><p data-i18n="w4_p">Ramassage et livraison directement chez vous — PK 8 et environs.</p></div></div>
       </div>
     </div>
-    <div class="why-right">
-      <div class="quality-card"><span class="quality-num">24h</span><div class="quality-label" data-i18n="qc1">Service continu</div></div>
-      <div class="quality-card"><span class="quality-num">6+</span><div class="quality-label" data-i18n="qc2">Types de services</div></div>
-      <div class="quality-card"><span class="quality-num">★★★</span><div class="quality-label" data-i18n="qc3">Qualité premium</div></div>
-      <div class="quality-card"><span class="quality-num">100%</span><div class="quality-label" data-i18n="qc4">Clients satisfaits</div></div>
+    <div class="why-photo-grid">
+      <div class="why-photo"><img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400&q=80" alt="Pressing" loading="lazy"></div>
+      <div class="why-photo"><img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?w=400&q=80" alt="Machine" loading="lazy"></div>
+      <div class="why-photo"><img src="https://images.unsplash.com/photo-1521656693074-0ef32e80a5d5?w=400&q=80" alt="Nettoyage" loading="lazy"></div>
+      <div class="why-photo"><img src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=400&q=80" alt="Repassage" loading="lazy"></div>
     </div>
   </div>
 </section>
 
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-big">24h</span><span class="stat-desc" data-i18n="sb1">Service continu</span></div>
+  <div class="stat-item"><span class="stat-big">6+</span><span class="stat-desc" data-i18n="sb2">Types de services</span></div>
+  <div class="stat-item"><span class="stat-big">★★★</span><span class="stat-desc" data-i18n="sb3">Qualité premium</span></div>
+  <div class="stat-item"><span class="stat-big">100%</span><span class="stat-desc" data-i18n="sb4">Clients satisfaits</span></div>
+</div>
+
+<!-- PRICING -->
 <section id="tarifs">
   <p class="section-label" data-i18n="pr_label">Nos tarifs</p>
   <h2 class="section-title" data-i18n="pr_title">Transparence & accessibilité</h2>
@@ -333,12 +457,12 @@
         <div class="tarif-row"><span class="tarif-name" data-i18n="p5_name">⚡ Supplément express</span><span class="tarif-price" data-i18n="p_quote">Sur devis</span></div>
         <div class="tarif-row"><span class="tarif-name" data-i18n="p6_name">🚚 Ramassage & Livraison</span><span class="tarif-price" data-i18n="p_quote">Sur devis</span></div>
       </div>
-      <p class="tarif-note" data-i18n="pr_note">* Contactez-nous au +237 697 383 650 pour un devis précis selon vos besoins.</p>
+      <p class="tarif-note" data-i18n="pr_note">* Contactez-nous au +237 697 383 650 pour un devis précis.</p>
     </div>
     <div class="tarifs-highlight">
       <div class="highlight-badge" data-i18n="hl_badge">⭐ Offre spéciale</div>
       <h3 class="highlight-title" data-i18n="hl_title">Livraison à domicile incluse</h3>
-      <p class="highlight-desc" data-i18n="hl_desc">Pour toute commande de pressing, nous assurons le ramassage et la livraison directement à votre porte — zone PK 8 et alentours.</p>
+      <p class="highlight-desc" data-i18n="hl_desc">Pour toute commande, nous assurons le ramassage et la livraison directement à votre porte — zone PK 8 et alentours.</p>
       <ul class="highlight-features">
         <li><div class="check">✓</div><span data-i18n="hf1">Ramassage à domicile</span></li>
         <li><div class="check">✓</div><span data-i18n="hf2">Traitement professionnel</span></li>
@@ -351,31 +475,35 @@
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid">
     <div>
       <p class="section-label" data-i18n="ct_label">Contact</p>
       <h2 class="section-title" data-i18n="ct_title">Parlons de vos besoins</h2>
       <div class="divider"></div>
-      <p style="color:var(--gray);font-size:0.9rem;line-height:1.8;margin-bottom:2.5rem;" data-i18n="ct_intro">Nous sommes disponibles 24h/24. N'hésitez pas à nous appeler, nous envoyer un message WhatsApp ou passer directement à notre boutique.</p>
+      <p style="color:var(--gray);font-size:0.9rem;line-height:1.8;margin-bottom:2rem;" data-i18n="ct_intro">Nous sommes disponibles 24h/24. Appelez-nous, envoyez un WhatsApp ou passez à notre boutique.</p>
       <div class="contact-info">
         <div class="contact-item"><div class="contact-icon">📞</div><div><h4 data-i18n="ct_phone_label">Téléphone</h4><a href="tel:+237697383650">+237 697 383 650</a></div></div>
         <div class="contact-item"><div class="contact-icon">💬</div><div><h4>WhatsApp</h4><a href="https://wa.me/237673835386" target="_blank">+237 673 835 386</a></div></div>
         <div class="contact-item"><div class="contact-icon">📍</div><div><h4 data-i18n="ct_addr_label">Adresse</h4><p data-i18n="ct_addr">PK 8, Valley St Thomas, Cameroun</p></div></div>
         <div class="contact-item"><div class="contact-icon">🕐</div><div><h4 data-i18n="ct_hours_label">Horaires</h4><p data-i18n="ct_hours">Service Rapide — Disponible 24h/24</p></div></div>
       </div>
+      <div class="contact-map">
+        <p style="color:var(--gray);font-size:0.85rem;" data-i18n="map_placeholder">📍 PK 8, Valley St Thomas — Yaoundé, Cameroun</p>
+      </div>
     </div>
     <div class="contact-form">
       <h3 class="form-title" data-i18n="form_title">Envoyer un message</h3>
       <p class="form-sub" data-i18n="form_sub">Nous vous répondrons dans les plus brefs délais.</p>
       <div class="form-row">
-        <div class="form-group"><label data-i18n="form_fname">Prénom</label><input type="text" id="inp-fname" placeholder="Votre prénom" data-i18n-ph="form_ph_fname"></div>
-        <div class="form-group"><label data-i18n="form_lname">Nom</label><input type="text" id="inp-lname" placeholder="Votre nom" data-i18n-ph="form_ph_lname"></div>
+        <div class="form-group"><label data-i18n="form_fname">Prénom</label><input type="text" placeholder="Votre prénom" data-i18n-ph="form_ph_fname"></div>
+        <div class="form-group"><label data-i18n="form_lname">Nom</label><input type="text" placeholder="Votre nom" data-i18n-ph="form_ph_lname"></div>
       </div>
       <div class="form-group"><label data-i18n="form_phone">Téléphone</label><input type="tel" placeholder="+237 6XX XXX XXX"></div>
       <div class="form-group">
         <label data-i18n="form_service">Service souhaité</label>
-        <select id="svc-select">
+        <select>
           <option value="" data-i18n="form_svc0">Choisir un service…</option>
           <option data-i18n="s1_name">Lavage tous vêtements</option>
           <option data-i18n="s2_name">Lavage à sec</option>
@@ -385,19 +513,19 @@
           <option data-i18n="s6_name">Ramassage & Livraison</option>
         </select>
       </div>
-      <div class="form-group"><label data-i18n="form_msg">Message</label><textarea id="inp-msg" placeholder="Décrivez vos besoins ou posez vos questions…" data-i18n-ph="form_ph_msg"></textarea></div>
-      <button class="btn-submit" id="submit-btn" onclick="handleSubmit()" data-i18n="form_submit">Envoyer le message ✓</button>
+      <div class="form-group"><label data-i18n="form_msg">Message</label><textarea placeholder="Décrivez vos besoins…" data-i18n-ph="form_ph_msg"></textarea></div>
+      <button class="btn-submit" onclick="handleSubmit()" data-i18n="form_submit">Envoyer le message ✓</button>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="#" class="nav-logo" style="text-decoration:none;display:inline-flex;">
-        <div class="nav-logo-circle">Ch@</div>
-        <span class="nav-logo-text" style="color:white;">Ch@Ch@ <span style="color:var(--red)">Pressing</span></span>
-      </a>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Ch@Ch@ Pressing" onerror="this.style.display='none'">
+      </div>
       <p data-i18n="footer_brand">Pressing et nettoyage professionnel au Cameroun. Qualité premium, service rapide, résultats impeccables. Propreté — Ponctualité — Satisfaction.</p>
     </div>
     <div class="footer-col">
@@ -416,110 +544,110 @@
       <ul>
         <li><a href="tel:+237697383650">+237 697 383 650</a></li>
         <li><a href="https://wa.me/237673835386" target="_blank">+237 673 835 386</a></li>
-        <li><a href="#" data-i18n="ct_addr">PK 8, Valley St Thomas</a></li>
-        <li><a href="#" data-i18n="ct_hours">Service Rapide — Disponible 24h/24</a></li>
+        <li><a href="#contact" data-i18n="ct_addr">PK 8, Valley St Thomas</a></li>
+        <li><a href="#contact" data-i18n="ct_hours">Service 24h/24</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p data-i18n="footer_copy">© 2025 Ch@Ch@ Pressing · Tous droits réservés</p>
-    <div class="stars" data-i18n="footer_stars">★★★ Qualité Premium</div>
+    <div class="stars">★★★ <span data-i18n="footer_stars">Qualité Premium</span></div>
   </div>
 </footer>
 
 <script>
 const i18n = {
   fr: {
-    nav_services: "Services", nav_about: "À propos", nav_pricing: "Tarifs", nav_contact: "Contact",
-    hero_location: "📍 PK 8 Valley St Thomas, Cameroun",
-    hero_title: "Le pressing<br><span class='accent'>professionnel</span><br>qu'il vous faut.",
-    hero_sub: "Lavage, repassage, nettoyage à sec — Ch@Ch@ Pressing prend soin de vos vêtements avec rigueur et rapidité. Service disponible 24h/24.",
-    hero_cta1: "Prendre rendez-vous →", hero_cta2: "📞 Appeler maintenant",
-    stat1: "Service rapide", stat2: "Types de lavage", stat3: "Satisfaction garantie",
-    rb1: "✦ Qualité Premium", rb2: "⚡ Express", rb3: "🚚 Livraison à domicile", rb4: "👕 Tous vêtements",
-    circle_sub: "Pressing · Nettoyage",
-    mq1: "Propreté", mq2: "Ponctualité", mq3: "Satisfaction", mq4: "Qualité Premium",
-    mq5: "Service 24h/24", mq6: "Livraison à domicile", mq7: "Résultats Impeccables",
-    svc_label: "Nos prestations", svc_title: "Tout ce dont vos vêtements ont besoin",
-    svc_intro: "Du lavage simple au repassage industriel, nous maîtrisons chaque étape du soin textile avec des équipements professionnels.",
-    s1_name: "Lavage tous vêtements", s1_desc: "Prise en charge de tous types de vêtements — chemises, pantalons, robes, tenues traditionnelles — avec le soin approprié à chaque tissu.",
-    s2_name: "Lavage à sec", s2_desc: "Nettoyage sans eau pour les tissus délicats et les pièces qui nécessitent un traitement spécial. Résultats impeccables garantis.",
-    s3_name: "Lavage en kilo", s3_desc: "Tarification au kilogramme pour les grandes quantités de linge. Idéal pour les familles, hôtels et entreprises.",
-    s4_name: "Lavage express", s4_desc: "Besoin urgent ? Notre service express traite votre linge en priorité absolue. Votre garde-robe prête en un temps record.",
-    s5_name: "Repassage industriel", s5_desc: "Repassage professionnel pour un résultat parfait. Nos équipements industriels éliminent le moindre faux-pli sur tous types de textiles.",
-    s6_name: "Ramassage & Livraison", s6_desc: "Nous venons chercher votre linge chez vous et le rapportons propre et plié. Un confort absolu sans se déplacer.",
-    why_label: "Pourquoi nous choisir", why_title: "Un pressing qui mérite votre confiance",
-    w1_h: "Qualité Premium", w1_p: "Équipements de dernière génération, produits professionnels et personnel formé pour des résultats irréprochables.",
-    w2_h: "Disponibilité 24h/24", w2_p: "Parce que vos besoins ne s'arrêtent pas. Notre service rapide est disponible à toute heure pour répondre à vos urgences.",
-    w3_h: "Soin & Respect de vos vêtements", w3_p: "Chaque pièce est traitée individuellement selon sa nature. Nous respectons vos vêtements comme s'ils étaient les nôtres.",
-    w4_h: "Service à domicile", w4_p: "Ramassage et livraison directement chez vous — PK 8 et environs — pour votre confort total.",
-    qc1: "Service continu", qc2: "Types de services", qc3: "Qualité premium", qc4: "Clients satisfaits",
-    pr_label: "Nos tarifs", pr_title: "Transparence & accessibilité",
-    pr_grid_title: "Grille tarifaire", pr_grid_sub: "Des prix justes pour un service d'excellence. Contactez-nous pour un devis personnalisé.",
-    p1_name: "👕 Chemise / Blouse", p2_name: "👖 Pantalon / Jupe", p3_name: "🧥 Veste / Costume",
-    p4_name: "⚖️ Lavage en kilo (min. 3kg)", p5_name: "⚡ Supplément express", p6_name: "🚚 Ramassage & Livraison",
-    p_quote: "Sur devis", pr_note: "* Contactez-nous au +237 697 383 650 pour un devis précis selon vos besoins.",
-    hl_badge: "⭐ Offre spéciale", hl_title: "Livraison à domicile incluse",
-    hl_desc: "Pour toute commande de pressing, nous assurons le ramassage et la livraison directement à votre porte — zone PK 8 et alentours.",
-    hf1: "Ramassage à domicile", hf2: "Traitement professionnel", hf3: "Livraison soignée", hf4: "Emballage protecteur", hf5: "Suivi de votre commande",
-    hl_cta: "Appeler pour réserver →",
-    ct_label: "Contact", ct_title: "Parlons de vos besoins",
-    ct_intro: "Nous sommes disponibles 24h/24. N'hésitez pas à nous appeler, nous envoyer un message WhatsApp ou passer directement à notre boutique.",
-    ct_phone_label: "Téléphone", ct_addr_label: "Adresse", ct_hours_label: "Horaires",
-    ct_addr: "PK 8, Valley St Thomas, Cameroun", ct_hours: "Service Rapide — Disponible 24h/24",
-    form_title: "Envoyer un message", form_sub: "Nous vous répondrons dans les plus brefs délais.",
-    form_fname: "Prénom", form_lname: "Nom", form_phone: "Téléphone", form_service: "Service souhaité", form_msg: "Message",
-    form_ph_fname: "Votre prénom", form_ph_lname: "Votre nom", form_ph_msg: "Décrivez vos besoins ou posez vos questions…",
-    form_svc0: "Choisir un service…", form_submit: "Envoyer le message ✓",
-    footer_brand: "Pressing et nettoyage professionnel au Cameroun. Qualité premium, service rapide, résultats impeccables. Propreté — Ponctualité — Satisfaction.",
-    footer_copy: "© 2025 Ch@Ch@ Pressing · Tous droits réservés", footer_stars: "★★★ Qualité Premium",
-    alert_msg: "Merci ! Nous vous contacterons très bientôt. 😊"
+    nav_services:"Services", nav_about:"À propos", nav_pricing:"Tarifs", nav_contact:"Contact",
+    hero_location:"📍 PK 8 Valley St Thomas, Cameroun",
+    hero_title:"Le pressing<br><span class='accent'>professionnel</span><br>qu'il vous faut.",
+    hero_sub:"Lavage, repassage, nettoyage à sec — Ch@Ch@ Pressing prend soin de vos vêtements avec rigueur et rapidité. Service disponible 24h/24.",
+    hero_cta1:"Prendre rendez-vous →", hero_cta2:"📞 Appeler maintenant",
+    stat1:"Service rapide", stat2:"Types de lavage", stat3:"Satisfaction garantie",
+    mq1:"Propreté", mq2:"Ponctualité", mq3:"Satisfaction", mq4:"Qualité Premium",
+    mq5:"Service 24h/24", mq6:"Livraison à domicile", mq7:"Résultats Impeccables",
+    svc_label:"Nos prestations", svc_title:"Tout ce dont vos vêtements ont besoin",
+    svc_intro:"Du lavage simple au repassage industriel, nous maîtrisons chaque étape du soin textile avec des équipements professionnels.",
+    s1_name:"Lavage tous vêtements", s1_desc:"Prise en charge de tous types de vêtements avec le soin approprié à chaque tissu.",
+    s2_name:"Lavage à sec", s2_desc:"Nettoyage sans eau pour les tissus délicats. Résultats impeccables garantis.",
+    s3_name:"Lavage en kilo", s3_desc:"Tarification au kilogramme pour les grandes quantités. Idéal pour familles et hôtels.",
+    s4_name:"Lavage express", s4_desc:"Service prioritaire pour les urgences. Votre linge prêt en un temps record.",
+    s5_name:"Repassage industriel", s5_desc:"Équipements industriels pour un résultat parfait — zéro faux-pli sur tous textiles.",
+    s6_name:"Ramassage & Livraison", s6_desc:"Nous venons chercher et rapportons votre linge propre. Confort absolu à domicile.",
+    gal1:"Machines industrielles", gal2:"Repassage expert", gal3:"Résultats impeccables", gal4:"Service professionnel",
+    why_label:"Pourquoi nous choisir", why_title:"Un pressing qui mérite votre confiance",
+    w1_h:"Qualité Premium", w1_p:"Équipements de dernière génération et personnel formé pour des résultats irréprochables.",
+    w2_h:"Disponibilité 24h/24", w2_p:"Notre service rapide est disponible à toute heure pour répondre à vos urgences.",
+    w3_h:"Soin & Respect de vos vêtements", w3_p:"Chaque pièce traitée individuellement. Nous respectons vos vêtements comme les nôtres.",
+    w4_h:"Service à domicile", w4_p:"Ramassage et livraison directement chez vous — PK 8 et environs.",
+    sb1:"Service continu", sb2:"Types de services", sb3:"Qualité premium", sb4:"Clients satisfaits",
+    pr_label:"Nos tarifs", pr_title:"Transparence & accessibilité",
+    pr_grid_title:"Grille tarifaire", pr_grid_sub:"Des prix justes pour un service d'excellence. Contactez-nous pour un devis personnalisé.",
+    p1_name:"👕 Chemise / Blouse", p2_name:"👖 Pantalon / Jupe", p3_name:"🧥 Veste / Costume",
+    p4_name:"⚖️ Lavage en kilo (min. 3kg)", p5_name:"⚡ Supplément express", p6_name:"🚚 Ramassage & Livraison",
+    p_quote:"Sur devis", pr_note:"* Contactez-nous au +237 697 383 650 pour un devis précis.",
+    hl_badge:"⭐ Offre spéciale", hl_title:"Livraison à domicile incluse",
+    hl_desc:"Pour toute commande, nous assurons le ramassage et la livraison directement à votre porte — zone PK 8 et alentours.",
+    hf1:"Ramassage à domicile", hf2:"Traitement professionnel", hf3:"Livraison soignée", hf4:"Emballage protecteur", hf5:"Suivi de votre commande",
+    hl_cta:"Appeler pour réserver →",
+    ct_label:"Contact", ct_title:"Parlons de vos besoins",
+    ct_intro:"Nous sommes disponibles 24h/24. Appelez-nous, envoyez un WhatsApp ou passez à notre boutique.",
+    ct_phone_label:"Téléphone", ct_addr_label:"Adresse", ct_hours_label:"Horaires",
+    ct_addr:"PK 8, Valley St Thomas, Cameroun", ct_hours:"Service Rapide — Disponible 24h/24",
+    map_placeholder:"📍 PK 8, Valley St Thomas — Yaoundé, Cameroun",
+    form_title:"Envoyer un message", form_sub:"Nous vous répondrons dans les plus brefs délais.",
+    form_fname:"Prénom", form_lname:"Nom", form_phone:"Téléphone", form_service:"Service souhaité", form_msg:"Message",
+    form_ph_fname:"Votre prénom", form_ph_lname:"Votre nom", form_ph_msg:"Décrivez vos besoins…",
+    form_svc0:"Choisir un service…", form_submit:"Envoyer le message ✓",
+    footer_brand:"Pressing et nettoyage professionnel au Cameroun. Qualité premium, service rapide, résultats impeccables.",
+    footer_copy:"© 2025 Ch@Ch@ Pressing · Tous droits réservés", footer_stars:"Qualité Premium",
+    alert_msg:"Merci ! Nous vous contacterons très bientôt. 😊"
   },
   en: {
-    nav_services: "Services", nav_about: "About", nav_pricing: "Pricing", nav_contact: "Contact",
-    hero_location: "📍 PK 8 Valley St Thomas, Cameroon",
-    hero_title: "The <span class='accent'>professional</span><br>laundry you<br>deserve.",
-    hero_sub: "Washing, ironing, dry cleaning — Ch@Ch@ Pressing cares for your clothes with precision and speed. Service available 24/7.",
-    hero_cta1: "Book an appointment →", hero_cta2: "📞 Call us now",
-    stat1: "Fast service", stat2: "Service types", stat3: "Satisfaction guaranteed",
-    rb1: "✦ Premium Quality", rb2: "⚡ Express", rb3: "🚚 Home Delivery", rb4: "👕 All Garments",
-    circle_sub: "Pressing · Cleaning",
-    mq1: "Cleanliness", mq2: "Punctuality", mq3: "Satisfaction", mq4: "Premium Quality",
-    mq5: "24/7 Service", mq6: "Home Delivery", mq7: "Impeccable Results",
-    svc_label: "Our Services", svc_title: "Everything your clothes need",
-    svc_intro: "From basic washing to industrial ironing, we master every step of garment care with professional-grade equipment.",
-    s1_name: "All Garment Washing", s1_desc: "We handle all clothing types — shirts, trousers, dresses, traditional outfits — with care tailored to each fabric.",
-    s2_name: "Dry Cleaning", s2_desc: "Waterless cleaning for delicate fabrics and garments that require special treatment. Impeccable results guaranteed.",
-    s3_name: "Wash by the Kilo", s3_desc: "Per-kilogram pricing for large quantities of laundry. Perfect for families, hotels, and businesses.",
-    s4_name: "Express Wash", s4_desc: "In a hurry? Our express service prioritizes your laundry. Your wardrobe ready in record time.",
-    s5_name: "Industrial Ironing", s5_desc: "Professional ironing for a flawless finish. Our industrial equipment removes every wrinkle from all fabric types.",
-    s6_name: "Pick-up & Delivery", s6_desc: "We collect your laundry from home and return it clean and folded. Total comfort without leaving the house.",
-    why_label: "Why choose us", why_title: "A laundry service you can trust",
-    w1_h: "Premium Quality", w1_p: "Latest-generation equipment, professional products, and trained staff for impeccable results.",
-    w2_h: "Available 24/7", w2_p: "Because your needs never stop. Our fast service is available around the clock for any emergency.",
-    w3_h: "Care & Respect for your clothes", w3_p: "Each item is treated individually according to its material. We care for your clothes as if they were our own.",
-    w4_h: "Home Service", w4_p: "Pick-up and delivery right to your door — PK 8 and surrounding areas — for your total convenience.",
-    qc1: "Continuous service", qc2: "Service types", qc3: "Premium quality", qc4: "Satisfied clients",
-    pr_label: "Pricing", pr_title: "Transparent & affordable",
-    pr_grid_title: "Price list", pr_grid_sub: "Fair prices for excellent service. Contact us for a personalised quote.",
-    p1_name: "👕 Shirt / Blouse", p2_name: "👖 Trousers / Skirt", p3_name: "🧥 Jacket / Suit",
-    p4_name: "⚖️ Wash by kilo (min. 3kg)", p5_name: "⚡ Express surcharge", p6_name: "🚚 Pick-up & Delivery",
-    p_quote: "On request", pr_note: "* Call us at +237 697 383 650 for a precise quote tailored to your needs.",
-    hl_badge: "⭐ Special offer", hl_title: "Home delivery included",
-    hl_desc: "For every pressing order, we handle collection and delivery right to your door — PK 8 area and surroundings.",
-    hf1: "Home collection", hf2: "Professional treatment", hf3: "Careful delivery", hf4: "Protective packaging", hf5: "Order tracking",
-    hl_cta: "Call to book →",
-    ct_label: "Contact", ct_title: "Let's talk about your needs",
-    ct_intro: "We are available 24/7. Feel free to call us, send a WhatsApp message, or drop by our shop directly.",
-    ct_phone_label: "Phone", ct_addr_label: "Address", ct_hours_label: "Hours",
-    ct_addr: "PK 8, Valley St Thomas, Cameroon", ct_hours: "Fast Service — Available 24/7",
-    form_title: "Send a message", form_sub: "We'll get back to you as soon as possible.",
-    form_fname: "First name", form_lname: "Last name", form_phone: "Phone", form_service: "Desired service", form_msg: "Message",
-    form_ph_fname: "Your first name", form_ph_lname: "Your last name", form_ph_msg: "Describe your needs or ask your questions…",
-    form_svc0: "Choose a service…", form_submit: "Send message ✓",
-    footer_brand: "Professional pressing and cleaning in Cameroon. Premium quality, fast service, impeccable results. Cleanliness — Punctuality — Satisfaction.",
-    footer_copy: "© 2025 Ch@Ch@ Pressing · All rights reserved", footer_stars: "★★★ Premium Quality",
-    alert_msg: "Thank you! We will contact you very soon. 😊"
+    nav_services:"Services", nav_about:"About", nav_pricing:"Pricing", nav_contact:"Contact",
+    hero_location:"📍 PK 8 Valley St Thomas, Cameroon",
+    hero_title:"The <span class='accent'>professional</span><br>laundry you<br>deserve.",
+    hero_sub:"Washing, ironing, dry cleaning — Ch@Ch@ Pressing cares for your clothes with precision and speed. Available 24/7.",
+    hero_cta1:"Book an appointment →", hero_cta2:"📞 Call us now",
+    stat1:"Fast service", stat2:"Service types", stat3:"Satisfaction guaranteed",
+    mq1:"Cleanliness", mq2:"Punctuality", mq3:"Satisfaction", mq4:"Premium Quality",
+    mq5:"24/7 Service", mq6:"Home Delivery", mq7:"Impeccable Results",
+    svc_label:"Our Services", svc_title:"Everything your clothes need",
+    svc_intro:"From basic washing to industrial ironing, we master every step of garment care with professional-grade equipment.",
+    s1_name:"All Garment Washing", s1_desc:"We handle all clothing types with care tailored to each fabric.",
+    s2_name:"Dry Cleaning", s2_desc:"Waterless cleaning for delicate fabrics. Impeccable results guaranteed.",
+    s3_name:"Wash by the Kilo", s3_desc:"Per-kilogram pricing for large quantities. Perfect for families and hotels.",
+    s4_name:"Express Wash", s4_desc:"Priority service for urgent needs. Your laundry ready in record time.",
+    s5_name:"Industrial Ironing", s5_desc:"Industrial equipment for a flawless finish — zero wrinkles on all fabrics.",
+    s6_name:"Pick-up & Delivery", s6_desc:"We collect and return your laundry clean. Total comfort at home.",
+    gal1:"Industrial machines", gal2:"Expert ironing", gal3:"Impeccable results", gal4:"Professional service",
+    why_label:"Why choose us", why_title:"A laundry service you can trust",
+    w1_h:"Premium Quality", w1_p:"Latest-generation equipment and trained staff for impeccable results.",
+    w2_h:"Available 24/7", w2_p:"Our fast service is available around the clock for any emergency.",
+    w3_h:"Care & Respect for your clothes", w3_p:"Each item treated individually. We care for your clothes as if they were our own.",
+    w4_h:"Home Service", w4_p:"Pick-up and delivery right to your door — PK 8 and surrounding areas.",
+    sb1:"Continuous service", sb2:"Service types", sb3:"Premium quality", sb4:"Satisfied clients",
+    pr_label:"Pricing", pr_title:"Transparent & affordable",
+    pr_grid_title:"Price list", pr_grid_sub:"Fair prices for excellent service. Contact us for a personalised quote.",
+    p1_name:"👕 Shirt / Blouse", p2_name:"👖 Trousers / Skirt", p3_name:"🧥 Jacket / Suit",
+    p4_name:"⚖️ Wash by kilo (min. 3kg)", p5_name:"⚡ Express surcharge", p6_name:"🚚 Pick-up & Delivery",
+    p_quote:"On request", pr_note:"* Call +237 697 383 650 for a precise quote.",
+    hl_badge:"⭐ Special offer", hl_title:"Home delivery included",
+    hl_desc:"For every order, we handle collection and delivery right to your door — PK 8 area and surroundings.",
+    hf1:"Home collection", hf2:"Professional treatment", hf3:"Careful delivery", hf4:"Protective packaging", hf5:"Order tracking",
+    hl_cta:"Call to book →",
+    ct_label:"Contact", ct_title:"Let's talk about your needs",
+    ct_intro:"We are available 24/7. Feel free to call, send a WhatsApp, or drop by our shop.",
+    ct_phone_label:"Phone", ct_addr_label:"Address", ct_hours_label:"Hours",
+    ct_addr:"PK 8, Valley St Thomas, Cameroon", ct_hours:"Fast Service — Available 24/7",
+    map_placeholder:"📍 PK 8, Valley St Thomas — Yaoundé, Cameroon",
+    form_title:"Send a message", form_sub:"We'll get back to you as soon as possible.",
+    form_fname:"First name", form_lname:"Last name", form_phone:"Phone", form_service:"Desired service", form_msg:"Message",
+    form_ph_fname:"Your first name", form_ph_lname:"Your last name", form_ph_msg:"Describe your needs…",
+    form_svc0:"Choose a service…", form_submit:"Send message ✓",
+    footer_brand:"Professional pressing and cleaning in Cameroon. Premium quality, fast service, impeccable results.",
+    footer_copy:"© 2025 Ch@Ch@ Pressing · All rights reserved", footer_stars:"Premium Quality",
+    alert_msg:"Thank you! We will contact you very soon. 😊"
   }
 };
 
@@ -529,7 +657,6 @@ function setLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang));
-
   const t = i18n[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -538,16 +665,13 @@ function setLang(lang) {
     else if (el.tagName === 'OPTION') el.textContent = t[key];
     else el.innerHTML = t[key];
   });
-
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
     const key = el.getAttribute('data-i18n-ph');
     if (t[key]) el.placeholder = t[key];
   });
 }
 
-function handleSubmit() {
-  alert(i18n[currentLang].alert_msg);
-}
+function handleSubmit() { alert(i18n[currentLang].alert_msg); }
 </script>
 </body>
 </html>
