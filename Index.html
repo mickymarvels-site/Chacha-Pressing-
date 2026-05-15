@@ -497,13 +497,13 @@ footer { background: var(--navy); padding: 4rem; border-top: 1px solid rgba(255,
       <h3 class="form-title" data-i18n="form_title">Envoyer un message</h3>
       <p class="form-sub" data-i18n="form_sub">Nous vous répondrons dans les plus brefs délais.</p>
       <div class="form-row">
-        <div class="form-group"><label data-i18n="form_fname">Prénom</label><input type="text" placeholder="Votre prénom" data-i18n-ph="form_ph_fname"></div>
-        <div class="form-group"><label data-i18n="form_lname">Nom</label><input type="text" placeholder="Votre nom" data-i18n-ph="form_ph_lname"></div>
+        <div class="form-group"><label data-i18n="form_fname">Prénom</label><input id="form-fname" type="text" placeholder="Votre prénom" data-i18n-ph="form_ph_fname"></div>
+        <div class="form-group"><label data-i18n="form_lname">Nom</label><input id="form-lname" type="text" placeholder="Votre nom" data-i18n-ph="form_ph_lname"></div>
       </div>
-      <div class="form-group"><label data-i18n="form_phone">Téléphone</label><input type="tel" placeholder="+237 6XX XXX XXX"></div>
+      <div class="form-group"><label data-i18n="form_phone">Téléphone</label><input id="form-phone" type="tel" placeholder="+237 6XX XXX XXX"></div>
       <div class="form-group">
         <label data-i18n="form_service">Service souhaité</label>
-        <select>
+        <select id="form-service">
           <option value="" data-i18n="form_svc0">Choisir un service…</option>
           <option data-i18n="s1_name">Lavage tous vêtements</option>
           <option data-i18n="s2_name">Lavage à sec</option>
@@ -513,7 +513,7 @@ footer { background: var(--navy); padding: 4rem; border-top: 1px solid rgba(255,
           <option data-i18n="s6_name">Ramassage & Livraison</option>
         </select>
       </div>
-      <div class="form-group"><label data-i18n="form_msg">Message</label><textarea placeholder="Décrivez vos besoins…" data-i18n-ph="form_ph_msg"></textarea></div>
+      <div class="form-group"><label data-i18n="form_msg">Message</label><textarea id="form-msg" placeholder="Décrivez vos besoins…" data-i18n-ph="form_ph_msg"></textarea></div>
       <button class="btn-submit" onclick="handleSubmit()" data-i18n="form_submit">Envoyer le message ✓</button>
     </div>
   </div>
@@ -671,7 +671,39 @@ function setLang(lang) {
   });
 }
 
-function handleSubmit() { alert(i18n[currentLang].alert_msg); }
+function handleSubmit() {
+  const fname = document.getElementById('form-fname').value.trim();
+  const lname = document.getElementById('form-lname').value.trim();
+  const phone = document.getElementById('form-phone').value.trim();
+  const service = document.getElementById('form-service').value.trim();
+  const msg = document.getElementById('form-msg').value.trim();
+
+  if (!fname && !lname && !msg) {
+    alert(currentLang === 'fr'
+      ? 'Veuillez remplir au moins votre nom et votre message.'
+      : 'Please fill in at least your name and message.');
+    return;
+  }
+
+  const isFr = currentLang === 'fr';
+  let text = '';
+  if (isFr) {
+    text += '\u{1F44B} *Nouveau message depuis le site Ch@Ch@ Pressing*\n\n';
+    if (fname || lname) text += `*Nom :* ${fname} ${lname}\n`;
+    if (phone)          text += `*T\u00E9l\u00E9phone :* ${phone}\n`;
+    if (service)        text += `*Service souhait\u00E9 :* ${service}\n`;
+    if (msg)            text += `*Message :* ${msg}`;
+  } else {
+    text += '\u{1F44B} *New message from the Ch@Ch@ Pressing website*\n\n';
+    if (fname || lname) text += `*Name:* ${fname} ${lname}\n`;
+    if (phone)          text += `*Phone:* ${phone}\n`;
+    if (service)        text += `*Service:* ${service}\n`;
+    if (msg)            text += `*Message:* ${msg}`;
+  }
+
+  const encoded = encodeURIComponent(text.trim());
+  window.open('https://wa.me/237673835386?text=' + encoded, '_blank');
+}
 </script>
 </body>
 </html>
